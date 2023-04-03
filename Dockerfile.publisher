@@ -1,0 +1,15 @@
+FROM python:3.10-alpine
+
+RUN mkdir /app
+
+WORKDIR /app
+
+RUN pip install --upgrade pip  \
+    && pip install pip-tools  \
+    && pip-install redis
+
+COPY . .
+
+EXPOSE 6379
+
+CMD [ "python3" "./publisher.py" ]

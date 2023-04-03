@@ -8,6 +8,6 @@ r = redis.Redis(
 )
 
 while True:
-    message = input("Enter the message you want to send to soilders: ")
+    message = input("Enter the message you want to send to soldiers: ")
 
     r.publish("army-camp-1", message)
